@@ -589,7 +589,7 @@ Accounts
     <!-- Nome Form Input -->
     <div class="form-group">
 
-    {{Form::file('path_image',['id'=>'path_image','onchange'=>"readURL(this,'#editSupplier_img')"])}}
+    {{Form::file('path_image',['required', 'id'=>'path_image','onchange'=>"readURL(this,'#editSupplier_img')"])}}
     </div>
     <div class="form-group">
       {!! Form::label('email', 'Email:') !!}
@@ -601,7 +601,7 @@ Accounts
     </div>
     <div class="form-group">
       {!! Form::label('name', 'Name:') !!}
-      {!! Form::text('name', null, ['id'=>'namesup','class'=>'w3-input w3-border', 'style'=>'padding: 3px 5px;']) !!}
+      {!! Form::text('name', null, ['id'=>'namesup','class'=>'w3-input w3-border', 'style'=>'padding: 3px 5px;', 'required']) !!}
     </div>
     <div class="form-group">
       {!! Form::label('social_denomination', 'Social Denomination:') !!}

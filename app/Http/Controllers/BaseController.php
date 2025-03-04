@@ -14,7 +14,7 @@ class BaseController extends Controller
     public function imgUpload($file, $patch = 'app/public/img/users/', $storageType = "storage"){
 
 
-        $disk = \Storage::disk($storageType);
+        $disk = Storage::disk($storageType);
 
         $filename  = Carbon::now()->timestamp . '_user.jpeg'; //img name
 
@@ -29,7 +29,8 @@ class BaseController extends Controller
         foreach($commands as $c){
 
           $process = new Process($c);
-          $process->setWorkingDirectory('/var/www/vhosts/atsportugal.com/httpdocs/');
+          // PROD ONLY
+          // $process->setWorkingDirectory('/var/www/vhosts/atsportugal.com/httpdocs/');
           $process->run();
         }
 
