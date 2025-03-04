@@ -45,7 +45,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "composer/installers": true
-        }
+        },
+        "process-timeout": 900
     },
     "extra": {
         "laravel": {
@@ -55,14 +56,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/"
-        },
-        "classmap": [
-            "database/seeds",
-            "database/factories"
-        ],
-        "files": [
-            "app/Helpers/Helper.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
