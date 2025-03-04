@@ -588,8 +588,10 @@ Accounts
     <div class="w3-container w3-cell w3-margin-top">
     <!-- Nome Form Input -->
     <div class="form-group">
+    <label>Maximum file size: 2 MB
+      {{Form::file('path_image',['required', 'id'=>'path_image','onchange'=>"readURL(this,'#editSupplier_img')"])}}
+    </label>
 
-    {{Form::file('path_image',['id'=>'path_image','onchange'=>"readURL(this,'#editSupplier_img')"])}}
     </div>
     <div class="form-group">
       {!! Form::label('email', 'Email:') !!}
@@ -601,7 +603,7 @@ Accounts
     </div>
     <div class="form-group">
       {!! Form::label('name', 'Name:') !!}
-      {!! Form::text('name', null, ['id'=>'namesup','class'=>'w3-input w3-border', 'style'=>'padding: 3px 5px;']) !!}
+      {!! Form::text('name', null, ['id'=>'namesup','class'=>'w3-input w3-border', 'style'=>'padding: 3px 5px;', 'required']) !!}
     </div>
     <div class="form-group">
       {!! Form::label('social_denomination', 'Social Denomination:') !!}
