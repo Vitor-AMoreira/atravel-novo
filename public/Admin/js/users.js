@@ -1089,6 +1089,16 @@ $('.formula').on('submit',function(e){
 //---------------------------------------------------------------------------------------------//
     if (modal.id == 'supplier') {
       $('#upload_form').submit(function(e) {
+        const fileInput = $('#path_image')[0];
+        const file = fileInput.files[0];
+        const fileSizeInBytes = file.size;
+        const fileSizeInMB = fileSizeInBytes / (1024 * 1024);
+
+        if (fileSizeInMB > 2) {
+            $('#error').html('<ul class="alert alert-warning"><li>File size exceeds 2MB limit.</li></ul>');
+            return false; // Prevent submission
+        }
+
           $.ajax({
               type: 'POST',
               url: "users/create",
